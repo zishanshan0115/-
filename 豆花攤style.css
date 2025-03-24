@@ -1,0 +1,87 @@
+header{ 
+    background-color: #ead2bb;
+    height:80px;
+    width:100%;
+    position:relative;
+}
+h1{ 
+    position:absolute;
+    left:120px;
+    top:0;
+    line-height:80px;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+
+header ul{
+    position:absolute;
+    right:6vw;
+    top:0;
+    line-height: 50px;
+}
+header li{
+    display: inline;
+    margin-right:4vw;
+}
+header a {
+    color:white;
+    text-decoration:none;
+}
+header a:hover{
+    text-decoration:underline;
+}
+
+    /* 內嵌 CSS */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f8ff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .player-container {
+        text-align: center;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    audio, video {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+    }
+
+    /* 音樂控制按鈕 */
+    .controls {
+        margin-top: 15px;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #0078d4;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #005a9e;
+    }
+
+    

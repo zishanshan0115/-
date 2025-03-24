@@ -1,0 +1,60 @@
+header{ 
+    background-color: #ead2bb;
+    height:80px;
+    width:100%;
+    position:relative;
+}
+h1{ 
+    position:absolute;
+    left:120px;
+    top:0;
+    line-height:80px;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+
+header ul{
+    position:absolute;
+    right:6vw;
+    top:0;
+    line-height: 50px;
+}
+header li{
+    display: inline;
+    margin-right:4vw;
+}
+header a {
+    color:white;
+    text-decoration:none;
+}
+header a:hover{
+    text-decoration:underline;
+}
+body {
+ margin: 0px;
+}
+.menu{
+    display:none;
+}
+
+/* 響應式設計語法 */
+@media screen and(max-widrh:768) {
+    header h1{
+        left:50%
+        transform:translateX(-50%);
+    }
+    .news h2{
+        font-size:40px;
+    }
+    .menu{
+        display：block；
+        background-color: transparent;
+        color:white;
+        font-size: 35px;
+        positon:absolute;
+        top:15px;
+        left:20px;
+        border:none;
+        cursor:pointer;
+    }
+}
