@@ -1,8 +1,8 @@
 // 選取所有有子選單的選單項目
-document.querySelectorAll('.dropdown').forEach(menuItem => {
+document.querySelectorAll('dropdown').forEach(menuItem => {
     menuItem.addEventListener('click', (event) => {
         // 確保僅處理子選單的開關
-        const submenu = menuItem.querySelector('.submenu');
+        const submenu = menuItem.querySelector('submenu');
         if (submenu) {
             event.preventDefault(); // 阻止預設連結行為
             // 切換子選單的顯示狀態

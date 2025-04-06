@@ -17,7 +17,7 @@ header ul{
     position:absolute;
     right:6vw;
     top:0;
-    line-height: 50px;
+    line-height: 20px;
 }
 header li{
     display: inline;
@@ -32,9 +32,23 @@ header a:hover{
 }
 body {
  margin: 0px;
+ padding:0px;
+
 }
 .menu{
     display:none;
+}
+h2 a{
+    background-color: #0078d4;
+    margin: 0;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+section {
+    margin-top: 10px;
 }
 
 /* 子選單樣式 */
@@ -42,7 +56,7 @@ body {
     display: none; /* 預設隱藏 */
     position: absolute;
     top: 100%; /* 子選單顯示在主選單下方 */
-    left: 0;
+    left: 10;
     background-color: #444;
     padding: 10px;
     border-radius: 5px;
@@ -50,12 +64,12 @@ body {
     z-index: 10;
     white-space: nowrap;
 }
-    display: inline-block; /* 水平排列 */
-    margin: 0 5px;
-}
 
 .submenu li a {
+    display: block;
     padding: 5px 10px;
+    width: 50%;
+    text-decoration: none;
     color: white;
 }
 
@@ -110,11 +124,17 @@ button {
         transition: background-color 0.3s ease;
     }
 
+.menu{
+    display: none;
+}
 /* 響應式設計語法 */
-@media screen and(max-widrh:768px) {
+@media screen and(max-width:768px) {
+    .header ul{
+        display:none;
+    }
     .header h1{
-        left:50%；
-        transform： translateX (-50%);
+        left:50%; 
+        transform:translateX (-50%);
     }
 
     .news h2{
@@ -122,15 +142,22 @@ button {
     }
     
     .menu{
-    
-        background-color: #f0f0f0;
-        font-size：35px;
-        position:absolute；
-        top：15px；
-        left：20px；
-        border:none；
-        cursor:pointer；
+        display: block;
+        background-color: transparent;
+        font-size:35px;
+        position:absolute;
+        top:15px;
+        left:20px;
+        border:none;
+        cursor:pointer;
+        
     }
+
+    .baby{
+        height: 100%;
+        width: 100%;
+    }
+
 
     .audio, video {
         width: 100%;

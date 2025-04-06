@@ -1,115 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>分頁範例</title>
-    <style>
-        /* CSS 部分 */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f8ff;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header 下拉選單</title>
+  <style>
+    /* 基本樣式 */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-        header {
-            background-color: #0078d4;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-        }
+    header {
+      background-color: #333;
+      padding: 10px;
+    }
 
-        header img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+    .menu {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-        main {
-            padding: 20px;
-            text-align: center;
-        }
+    .menu > li {
+      position: relative;
+      margin-right: 20px;
+    }
 
-        main p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
+    .menu > li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      display: block;
+    }
 
-        .audio-controls {
-            margin-top: 20px;
-        }
+    .menu > li a:hover {
+      background-color: #555;
+    }
 
-        button {
-            padding: 10px 15px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #0078d4;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 5px;
-        }
+    /* 下拉選單樣式 */
+    .submenu {
+      display: none;
+      position: absolute;
+      background-color: #444;
+      list-style: none;
+      padding: 10px;
+      margin: 0;
+      top: 100%;
+      left: 0;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
 
-        button:hover {
-            background-color: #005a9e;
-        }
-    </style>
+    .submenu li {
+      margin-bottom: 5px;
+    }
+
+    .submenu li a {
+      color: white;
+      padding: 5px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .submenu li a:hover {
+      background-color: #555;
+    }
+
+    /* 顯示下拉選單 */
+    .menu > li:hover .submenu {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>歡迎來到我的網站</h1>
-        <!-- 自定義圖片 -->
-        <img src="your-photo.jpg" alt="Your Photo">
-    </header>
-
-    <main>
-        <h2>這是分頁內容</h2>
-        <p>
-            這是一個示範的 HTML 頁面，包含自定義圖片的標頭、文字內容，以及聲音的播放功能。當 NFC 被觸發時，會自動播放背景音樂。
-        </p>
-
-        <!-- 聲音播放區 -->
-        <div class="audio-controls">
-            <audio id="backgroundAudio" preload="auto">
-                <source src="your-audio-file.mp3" type="audio/mpeg">
-            </audio>
-            <button onclick="playAudio()">播放音樂</button>
-            <button onclick="pauseAudio()">暫停音樂</button>
-        </div>
-    </main>
-
-    <script>
-        // JavaScript 部分
-        const backgroundAudio = document.getElementById('backgroundAudio');
-
-        // 播放和暫停功能
-        function playAudio() {
-            backgroundAudio.play();
-        }
-
-        function pauseAudio() {
-            backgroundAudio.pause();
-        }
-
-        // NFC 模擬觸發自動播放
-        if ('NDEFReader' in window) {
-            const reader = new NDEFReader();
-            reader.scan().then(() => {
-                console.log('NFC scanning started.');
-                backgroundAudio.play(); // NFC 觸發播放音樂
-            }).catch(error => {
-                console.error('NFC error:', error);
-            });
-        } else {
-            console.log('NFC 不被支援，無法啟用掃描功能。');
-        }
-    </script>
+  <header>
+    <ul class="menu">
+      <li><a href="#">首頁</a></li>
+      <li>
+        <a href="#">服務</a>
+        <!-- 下拉選單 -->
+        <ul class="submenu">
+          <li><a href="#">選項 1</a></li>
+          <li><a href="#">選項 2</a></li>
+          <li><a href="#">選項 3</a></li>
+        </ul>
+      </li>
+      <li><a href="#">關於我們</a></li>
+      <li><a href="#">聯絡我們</a></li>
+    </ul>
+  </header>
 </body>
 </html>
