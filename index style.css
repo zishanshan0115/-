@@ -127,8 +127,8 @@ button {
 /* 響應式設計語法 */
 @media screen and (max-width:768px) {
     h2 img{
-       height: 120px;
-       width: 150px;
+       height: 120px !important;
+       width: 150px !important;
     }
 
     header ul{
