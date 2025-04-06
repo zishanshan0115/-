@@ -35,7 +35,7 @@ body {
  padding:0px;
 
 }
-.menu{
+menu{
     display:none;
 }
 h2 a{
@@ -124,18 +124,17 @@ button {
         transition: background-color 0.3s ease;
     }
 
-.menu{
-    display: none;
-}
 /* 響應式設計語法 */
-@media screen and(max-width:768px) {
-    .img {
-       max-height: 150px;
+@media screen and (max-width:768px) {
+    h2 img{
+       height: 120px  !important;
+       width: 150px !important;
     }
-    .header ul{
+
+    header ul{
         display:none;
     }
-    .header h1{
+    header h1{
         left:50%; 
         transform:translateX (-50%);
     }
@@ -156,13 +155,13 @@ button {
         
     }
 
-    .baby{
+    .body{
         height: 100%;
         width: 100%;
     }
 
 
-    .audio, video {
+    audio, video {
         width: 100%;
         max-width: 400px;
         border-radius: 10px;
