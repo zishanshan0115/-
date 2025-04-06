@@ -11,11 +11,17 @@ document.querySelectorAll('dropdown').forEach(menuItem => {
     });
 });
 
-// 點擊其他區域關閉子選單
-document.addEventListener('click', (event) => {
-    document.querySelectorAll('.submenu').forEach(submenu => {
-        if (!submenu.contains(event.target) && !submenu.parentElement.contains(event.target)) {
-            submenu.style.display = 'none';
+
+document.addEventListener('DOMContentLoaded',function () {
+    const menult = document.querySelector('.menu');
+    const nav = document.querySelector('nav ul');
+    
+    menult.addEventListener('click',() => {
+        if(nav.style.display === "block"){
+            nav.style.display = "none";
+        }else{
+            nav.style.display = "block";
         }
     });
-});
+}); 
+

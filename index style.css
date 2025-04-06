@@ -35,7 +35,7 @@ body {
  padding:0px;
 
 }
-menu{
+.menu {
     display:none;
 }
 h2 a{
@@ -146,10 +146,10 @@ button {
     .menu{
         display: block;
         background-color: transparent;
-        font-size:35px;
-        position:absolute;
-        top:15px;
-        left:20px;
+        font-size: 20px;
+        position: absolute;
+        top: 11px;
+        left: -5%;
         border:none;
         cursor:pointer;
         
@@ -160,12 +160,18 @@ button {
         width: 100%;
     }
 
-
     audio, video {
         width: 100%;
         max-width: 400px;
         border-radius: 10px;
     }
+    nav ul{
+        display:none;
+        left:0;
+    }
 
+    nav ul li{
+        display:block;
+    }
 
 }
