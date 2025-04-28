@@ -1,25 +1,10 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;  /* 隱藏水平方向的滾動條 */
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-main {
-    flex: 1;
-}
 
 header{ 
     background-color: #ead2bb;
-    height:91px;
+    height:80px;
     width:100%;
     position:relative;
 }
-
 h1{ 
     position:absolute;
     left:120px;
@@ -27,41 +12,6 @@ h1{
     line-height:80px;
     background-repeat: no-repeat;
     background-position:center;
-}
-
-h2 {
-    text-align: center;
-    position: relative;
-    height: 320px; /* 控制區塊高度，可依需求調整 */
-    margin-top: 2%;
-}
-
-h2 img {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* 背景圖設定在下層 */
-h2 img.back {
-    margin-top: -166px;
-    top: 81px !important;
-    z-index: -1000;
-    width: 100%;
-    height: 166% !important;
-    opacity: 0.7;
-}
-
-/* Logo2 設定在上層 */
-h2 img:not(.back) {
-    margin-top: -17px;
-    z-index: 1;
-}
-
-img.back{
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 header ul{
@@ -88,7 +38,6 @@ body {
 }
 .menu {
     display:none;
-
 }
 h2 a{
     background-color: #0078d4;
@@ -97,43 +46,25 @@ h2 a{
 
 .dropdown:hover .submenu {
     display: block;
+    margin-right: 8vw;
 }
 
 section {
-    margin-top: 17px;
-    font-size: 20px;
-
-}
-
-p {
-    text-align: center;
-}
-p.text{
-    font-size: 3.5vh;
-    background-color: rgb(240, 206, 144);
-    padding: 40px 0px;
-    margin-bottom: -10px;
+    margin-top: 10px;
 }
 
 /* 子選單樣式 */
 .submenu {
-    display: none; 
+    display: none; /* 預設隱藏 */
     position: absolute;
     top: 100%; /* 子選單顯示在主選單下方 */
-    margin-right:20%;
-    background-color: #444;
+    left: 10;
+    background-color: #1a1a1a;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     z-index: 10;
     white-space: nowrap;
-    transition: transform 0.3s ease, opacity 0.3s ease; /* 添加過渡動畫 */
-}
-
-.submenu li.active {
-    display: flex;
-    opacity: 1;  /* 顯示 */
-    transform: translateY(0); /* 滑動到原來的位置 */
 }
 
 .submenu li a {
@@ -143,19 +74,20 @@ p.text{
     text-decoration: none;
     color: white;
 }
-
 .submenu.open {
     display: block;
+    margin-right: 8vw;
 }
-
+.submenu li a:hover {
+    background-color: #444;
+}
+.menu.active {
+    display: flex;
+}
 .menu-toggle {
     display: none;
     font-size: 30px;
     cursor: pointer; 
-}
-
-.submenu li a:hover {
-    background-color: #444;
 }
 
 footer {
@@ -167,6 +99,7 @@ footer {
 
 .player-container {
     text-align: center;
+    margin-top: -4%;
     background: #ffffff;
     padding: 20px;
     border-radius: 15px;
@@ -177,7 +110,6 @@ footer {
 .controls {
     margin-top: 15px;
 }
-
 .button {
     padding: 10px 20px;
     margin: 5px;
@@ -192,8 +124,7 @@ footer {
 
 .button:hover {
     background-color: #005a9e;
-}
-
+    }
 button {
         padding: 10px 20px;
         margin: 5px;
@@ -204,22 +135,23 @@ button {
         border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s ease;
-}
+    }
 
+    h2 img.back {
+        position: relative;
+        margin-top: -106%;
+        top: 22px !important;
+        z-index: -1000;
+        width: 100%;
+        height: 450px !important;
+        opacity: 0.7;
+    }
 /* 響應式設計語法 */
 @media screen and (max-width:768px) {
-    h2 img:not(.back) {
-        margin-top: -83px;
-        z-index: 1;
-    }
-
-    h2 {
-        height: 250px;
-    }
-
-    h2 img{
-        height: 127px !important;
-        width: 190px !important;
+    h2 img {
+        height: 159px !important;
+        width: 150px !important;
+        margin-top: -10%;
     }
 
     header ul{
@@ -232,27 +164,6 @@ button {
 
     .news h2{
         font-size:40px;
-    }
-
-    .body{
-        height: 100%;
-        width: 100%;
-    }
-
-    audio, video {
-        width: 100%;
-        max-width: 400px;
-        border-radius: 10px;
-    }
-
-    .left-column{
-        height: 120px;
-        width: 200px;
-    }
-
-    .right-column{
-        height: 120px;
-        width: 200px;
     }
 
     /* 漢堡按鈕 */
@@ -273,11 +184,6 @@ button {
         display: block;/* 點擊漢堡才展開 */
     }
 
-    section {
-        flex-direction: column;
-        display: flex;
-    }
-
     /* 主選單樣式 */
     nav ul {
         background-color: #000;  /* 設定黑色背景 */
@@ -293,12 +199,9 @@ button {
         display: flex; /* 點擊後顯示 */
         flex-direction: column;  /* 垂直排列 */
         margin-top: 25%;
-        margin-right: 54%;
+        margin-right: 59%;
         line-height: 39px;
         z-index: 10;
-    }
-    p.text {
-        padding: 26px 0px ;
     }
 
     /* 子選單樣式 */
@@ -310,10 +213,13 @@ button {
 
     .submenu.open {
         display: block; /* 顯示子選單 */
-        margin-right: -124%;
-        margin-top: -227%;
+        margin-right: -135%;
+        margin-top: -270%;
     }
 
+    .dropdown:hover .submenu {
+        margin-right: -46vw; 
+    }
     /* 選單項目的顏色 */
     li a {
         line-height: 19px;
@@ -327,19 +233,45 @@ button {
         display: flex;
     }
 
-    h2 {
-        text-align: center;
-        position: relative;
-        height: 175px;
+    .body{
+        height: 100%;
+        width: 100%;
     }
 
+    audio, video {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+    }
+
+    .left-column{
+        height: 120px;
+        width: 200px;
+    }
+    .right-column{
+        height: 120px;
+        width: 200px;
+    }
+    footer {
+        margin-top: -6%;
+    }
     h2 img.back {
-        margin-top: -166px;
-        top: 100px !important;
-        z-index: -1000;
-        width: 140% !important;
-        height: 163% !important;
+        position: relative;
+        top: 5px !important;
+        z-index: -1000 !important;
+        width: 100% !important;
+        height: 80% !important;
         opacity: 0.7;
+    }
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+    h2 {
+         height:auto; 
+    }
+    .player-container {
+        margin-top: -13%;
     }
     .menu-toggle {
         display: block; /* 手機版才看到漢堡按鈕 */

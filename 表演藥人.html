@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>表演藥人</title>
-    <link rel="stylesheet" href="index style.css">
+    <link rel="stylesheet" href="venders.css">
     <script src ="index.js"></script>
 </head>
 <body>
     <header>
-        <button class="menu">&#9776;</button>
     <h1>
      <img src="images/logo/Logo.png" alt="png"style="height: 120px;margin-top:-45px;margin-left:-120px;">
     </h1>
+    <button class="menu">&#9776;</button>
     <nav>
         <ul>
         <section>
@@ -42,7 +42,8 @@
 
 <div>
     <h2>
-        <img src="images/攤販圖 png/賣藥.PNG" alt="png"style="height: 400px;top: 100px;">
+        <img src="images/攤販圖 png/賣藥.PNG" alt="png"style="height: 380px;top: 100px;">
+        <img class='back' src="images\pic\背景.jpg" alt="jpg"style="height: 200px;top: 100px;">
     </h2>
 </div>
 <div>
@@ -85,11 +86,18 @@
             font-size: 100px; /* 放大冒號前的字 */
             font-weight: bold; /* 粗體讓字更突出（可選） */
         }
+        @media screen and (max-width: 768px) {
+            h2 img {
+                height: 148px !important;
+                width: 150px !important;
+                margin-top: -6%;
+            }
+        }    
     </style>
     <main>    
         <p>
         <section>
-            <p>出沒時間地點
+            <p><br>出沒時間地點
                 民國50年代廟會市集的傍晚
 
             <p>叫賣方式 : 
@@ -102,8 +110,11 @@
                 勞工、農民、家庭主婦、長者及廟會市集人潮
            
             <p>小知識 :
-                「藥人」是一種融合醫學、民俗和表演藝術的文化現象。這類表演往往與祈福、祛病以及展示醫療技術相關，其文化意涵和表現形式十分豐富。藥人表演通常具有強烈的互動性，例如為觀眾「開藥方」或示範民間療法，進一步拉近表演與生活的距離。
+                「藥人」是一種融合醫學、民俗和表演藝術的文化現象。這類表演往往與祈福、祛病以及展示醫療技術相關，其文化意涵和表現形式十分豐富。藥人表演通常具有強烈的互動性，例如為觀眾「開藥方」或示範民間療法，進一步拉近表演與生活的距離。<br><br>
     </main>
+    <footer>
+        <p>Copyright @ 2025 喝玲瑯 All Right Reserved.</p>
+    </footer>
 </div>
 </body>
 </html>
